@@ -1,0 +1,31 @@
+<label id="total_costo">
+  Costo total: ${{total_costo}}
+</label>
+<br>
+<br>
+<label for="Recoger">Recoger en residencia: </label>
+<select id="Recoger" [(ngModel)]="recoger_puerta">
+  <option [ngValue]="false">No</option>
+  <option [ngValue]="true">Si</option>
+</select>
+<br>
+
+<label for="Entregar">Entregar en residencia: </label>
+<select id="Entregar" [(ngModel)]="entregar_puerta">
+  <option [ngValue]="false">No</option>
+  <option [ngValue]="true">Si</option>
+</select>
+
+<br>
+
+<label for="transporte">Tipo de transporte: </label>
+<select id="transporte" [(ngModel)]="tipo_transporte">
+  <option value="Terrestre">Terrestre</option>
+  <option value="Aereo">Aereo</option>
+</select>
+
+<br>
+
+<button
+(click)="calcular()"
+>Calcular</button>
