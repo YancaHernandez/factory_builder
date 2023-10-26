@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { direccion_aeropuerto_por_ciudad, direccion_centrar_por_ciudad } from '@domain/data/direcciones';
+import { direccion_aeropuerto_por_ciudad, direccion_centrar_por_ciudad, direccion_puerto_por_ciudad } from '@domain/data/direcciones';
 import { LogisticaGateway } from '@domain/gateway/logistica.gateway';
 import { EnvioModel } from '@domain/models/envio.model';
 
@@ -31,6 +31,17 @@ export class LogisticaService implements LogisticaGateway {
         this.recorrido_aereo(envio.ciudad_origen, envio.ciudad_destino);
         //Calcular cargo por recorrido urbano con carga del aeropuerto a la central
         this.recorrido_urbano(direccion_aeropuerto_por_ciudad[envio.ciudad_destino], direccion_centrar_por_ciudad[envio.ciudad_destino], true);
+
+        break;
+
+      case 'Maritimo':
+
+        //Calcular cargo por recorrido urbano con carga al puerto
+        this.recorrido_urbano(envio.direccion_destino, direccion_puerto_por_ciudad[envio.ciudad_origen], true);
+        //Calcular cargo por recorrido en barco
+        this.recorrido_maritimo(envio.ciudad_origen, envio.ciudad_destino);
+        //Calcular cargo por recorrido urbano con carga del puerto a la central
+        this.recorrido_urbano(direccion_puerto_por_ciudad[envio.ciudad_destino], direccion_centrar_por_ciudad[envio.ciudad_destino], true);
 
         break;
 
@@ -67,6 +78,12 @@ export class LogisticaService implements LogisticaGateway {
     this.total += 1000;
     console.log(`Transportar por aire desde ${origen} hasta ${destino}`)
     console.log(`Cargo por recorrido en avion: 1000`)
+  }
+
+  private recorrido_maritimo(origen: string, destino: string) {
+    this.total += 500;
+    console.log(`Transportar por mar desde ${origen} hasta ${destino}`)
+    console.log(`Cargo por recorrido en barco: 500`)
   }
 
 }

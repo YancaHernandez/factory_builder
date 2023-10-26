@@ -3,6 +3,7 @@ import { Ciudades } from "@domain/enums/ciudades";
 export enum TipoTransporte {
   Terrestre = 'Terrestre',
   Aereo = 'Aereo',
+  Maritimo = 'Maritimo',
 }
 export interface EnvioModel {
   ciudad_origen: Ciudades;
