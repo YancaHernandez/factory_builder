@@ -1,4 +1,4 @@
-import { Ciudades } from "../entities/ciudades"
+import { Ciudades } from "../enums/ciudades"
 
 export const direccion_centrar_por_ciudad: Record<Ciudades, string> = {
   Valledupar: 'Calle 1 # 2 - 3',

@@ -1,35 +1,33 @@
-import { Ciudades } from '@domain/entities/ciudades';
+import { Injectable } from '@angular/core';
 import { direccion_centrar_por_ciudad } from '@domain/data/direcciones';
+import { LogisticaGateway } from '@domain/gateway/logistica.gateway';
+import { EnvioModel } from '@domain/models/envio.model';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class LogisticaService implements LogisticaGateway {
 
-export class Camion {
   private total: number = 0;
 
   //Calcular costo total
-  calcular_cosoto_total(
-    ciudad_origen: Ciudades,
-    ciudad_destino: Ciudades,
-    recoger_puerta: boolean = false,
-    direccion_origen: string = '',
-    entregar_puerta: boolean = false,
-    direccion_destino: string = '',
-  ): number {
+  calcular_costo_total(envio: EnvioModel): number {
 
     this.total = 500;
 
     //Recoger en puerta
-    if (recoger_puerta) {
+    if (envio.recoger_puerta) {
       //Calcular cargo por recorrido urbano sin carga
-      this.recorrido_urbano(direccion_centrar_por_ciudad[ciudad_origen], direccion_origen);
+      this.recorrido_urbano(direccion_centrar_por_ciudad[envio.ciudad_origen], envio.direccion_origen);
     }
 
     //Calcular cargo por recorrido en carretera
-    this.recorrido_carretera(ciudad_origen, ciudad_destino);
+    this.recorrido_carretera(envio.ciudad_origen, envio.ciudad_destino);
 
     //Entregar puerta
-    if (entregar_puerta) {
+    if (envio.entregar_puerta) {
       //Calcular cargo por recorrido urbano con carga
-      this.recorrido_urbano(direccion_centrar_por_ciudad[ciudad_destino], direccion_destino, true);
+      this.recorrido_urbano(direccion_centrar_por_ciudad[envio.ciudad_destino], envio.direccion_destino, true);
     }
 
     //Retornar valor total
