@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Ciudades } from '@domain/enums/ciudades';
-import { EnvioModel } from '@domain/models/envio.model';
+import { EnvioModel, TipoTransporte } from '@domain/models/envio.model';
 import { LogisticaUseCase } from '@domain/usecases/logistica.usecase';
 
 @Component({
@@ -15,7 +15,7 @@ export class LogisticaComponent {
   public direccion_origen: string = 'Mi casa';
   public entregar_puerta: boolean = false;
   public direccion_destino: string = 'Su casa';
-
+  public tipo_transporte: TipoTransporte = TipoTransporte.Terrestre;
 
   total_costo = 0;
   constructor(
@@ -30,7 +30,8 @@ export class LogisticaComponent {
       recoger_puerta: this.recoger_puerta,
       direccion_origen: this.direccion_origen,
       entregar_puerta: this.entregar_puerta,
-      direccion_destino: this.direccion_destino
+      direccion_destino: this.direccion_destino,
+      tipo_transporte: this.tipo_transporte,
     }
     this.total_costo = this.logisticaUseCase.calcular_costo_total(envio)
   }
