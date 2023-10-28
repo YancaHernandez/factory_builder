@@ -1,4 +1,3 @@
-import { Ciudades } from "@domain/enums/ciudades";
 import { Logistica_Transporte } from "./logistica_transporte";
 import { EnvioModel } from "@domain/models/envio.model";
 
