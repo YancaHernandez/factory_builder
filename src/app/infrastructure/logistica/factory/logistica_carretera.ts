@@ -7,7 +7,7 @@ export class Logistica_Carretera extends Logistica_Transporte {
   ) { super(envio) }
 
   //Calcular costo total
-  calcular_cosoto_total(): number {
+  calcular_costo_total(): number {
     //Calcular cargo por recorrido en carretera
     this.recorrido_carretera(this.envio.ciudad_origen, this.envio.ciudad_destino);
     //Retornar valor total
