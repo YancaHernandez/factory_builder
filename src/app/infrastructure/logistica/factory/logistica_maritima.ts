@@ -8,7 +8,7 @@ export class Logistica_Maritima extends Logistica_Transporte {
   ) { super(envio) }
 
   //Calcular costo total
-  calcular_cosoto_total(): number {
+  calcular_costo_total(): number {
     //Calcular cargo por recorrido urbano con carga al puerto
     this.recorrido_urbano(this.envio.direccion_destino, direccion_puerto_por_ciudad[this.envio.ciudad_origen], true);
     //Calcular cargo por recorrido en barco

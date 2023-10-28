@@ -8,7 +8,7 @@ export class Logistica_Aerea extends Logistica_Transporte {
   ) { super(envio) }
 
   //Calcular costo total
-  calcular_cosoto_total(): number {
+  calcular_costo_total(): number {
     //Calcular cargo por recorrido urbano con carga al aeropuerto
     this.recorrido_urbano(this.envio.direccion_destino, direccion_aeropuerto_por_ciudad[this.envio.ciudad_origen], true);
     //Calcular cargo por recorrido en avion
