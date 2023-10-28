@@ -11,7 +11,7 @@ export abstract class Logistica_Transporte {
     this.calcular_costos_adicionales();
   }
 
-  abstract calcular_cosoto_total(): number
+  abstract calcular_costo_total(): number
 
   private calcular_costos_adicionales() {
     //Recoger en puerta

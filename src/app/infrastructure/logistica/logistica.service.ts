@@ -10,7 +10,7 @@ export class LogisticaService implements LogisticaGateway {
   //Calcular costo total
   calcular_costo_total(envio: EnvioModel): number {
     const logistica = new Logistica_Carretera(envio)
-    return logistica.calcular_cosoto_total();
+    return logistica.calcular_costo_total();
   }
 
 }
