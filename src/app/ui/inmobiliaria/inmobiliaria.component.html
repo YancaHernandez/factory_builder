@@ -1,0 +1,24 @@
+<div class="component-container">
+
+  <label id="total_costo">
+    Costo total: ${{total_costo}}
+  </label>
+  <br>
+  <br>
+  <label for="habitaciones">Habitaciones: </label>
+  <input [(ngModel)]="habitaciones" type="number" name="habitaciones" id="habitaciones">
+  <br>
+
+  <label for="pisos">Pisos: </label>
+  <input [(ngModel)]="pisos" type="number" name="pisos" id="pisos">
+  <br>
+
+  <label for="banos">Baños: </label>
+  <input [(ngModel)]="banos" type="number" name="banos" id="banos">
+  <br>
+
+  <button
+  (click)="calcular()"
+  >Calcular</button>
+
+</div>

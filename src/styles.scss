@@ -1,0 +1,65 @@
+body{
+  margin: 0px;
+}
+
+/* Estilos generales del componente */
+.component-container {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* Estilos para el botón de calcular */
+button {
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Cambio de color al pasar el ratón sobre el botón */
+}
+
+/* Estilos para los selectores y etiquetas */
+label, select {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Estilos para el costo total */
+#total_costo {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Estilos para los selectores */
+select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para los elementos seleccionados en los selectores */
+select:focus {
+  outline: none;
+  border-color: #007bff; /* Cambio de color al enfocar el selector */
+}
+
+/* Estilos para el texto "No" y "Si" en los selectores */
+option[value="false"] {
+  color: red; /* Color de "No" en rojo */
+}
+
+option[value="true"] {
+  color: green; /* Color de "Si" en verde */
+}
