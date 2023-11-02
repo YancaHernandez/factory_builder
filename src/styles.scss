@@ -30,8 +30,12 @@ button:hover {
 }
 
 /* Estilos para los selectores y etiquetas */
-label, select {
-  display: block;
+label{
+  display: inline;
+  margin-top: 10px;
+}
+
+input{
   margin-top: 10px;
 }
 
@@ -41,25 +45,4 @@ label, select {
   margin-top: 20px;
 }
 
-/* Estilos para los selectores */
-select {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
-/* Estilos para los elementos seleccionados en los selectores */
-select:focus {
-  outline: none;
-  border-color: #007bff; /* Cambio de color al enfocar el selector */
-}
-
-/* Estilos para el texto "No" y "Si" en los selectores */
-option[value="false"] {
-  color: red; /* Color de "No" en rojo */
-}
-
-option[value="true"] {
-  color: green; /* Color de "Si" en verde */
-}

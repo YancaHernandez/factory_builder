@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { InmobiliariaComponent } from './ui/inmobiliaria/inmobiliaria.component';
 import { InmobiliariaUseCase } from './domain/usecases/inmobiliaria.usecase';
 import { InmobiliariaGateway } from './domain/gateways/inmobiliaria.gateway';
-import { InmobiliariaService } from './infrastructure/inmobiliaria/inmobiliaria.service';
+import { InmobiliariaService } from './infrastructure/inmobiliaria/InmobiliariaService';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
