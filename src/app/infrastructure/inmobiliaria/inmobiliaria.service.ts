@@ -13,7 +13,9 @@ export class InmobiliariaService implements InmobiliariaGateway {
     this.cargo_por_habitaciones(vivienda.habitaciones);
     this.cargo_por_pisos(vivienda.habitaciones);
     this.cargo_por_banos(vivienda.habitaciones);
-    return this.total;
+    const costo_total = this.total;
+    this.total = 0;
+    return costo_total;
   }
 
   private cargo_por_habitaciones(cantidad: number) {
