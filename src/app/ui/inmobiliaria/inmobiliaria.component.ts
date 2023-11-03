@@ -11,6 +11,11 @@ export class InmobiliariaComponent {
   public pisos: number = 1;
   public banos: number = 1;
 
+  public piscina: boolean = false;
+  public jardin: boolean = false;
+  public garaje: boolean = false;
+  public patio: boolean = false;
+
 
   total_costo = 0;
   constructor(
@@ -22,7 +27,11 @@ export class InmobiliariaComponent {
     const vivienda: ViviendaModel = {
       habitaciones: this.habitaciones,
       pisos: this.pisos,
-      banos: this.banos
+      banos: this.banos,
+      piscina: this.piscina,
+      jardin: this.jardin,
+      garaje: this.garaje,
+      patio: this.patio,
     }
     this.total_costo = this.inmobiliariaUseCase.calcular_costo_vivienda(vivienda)
   }
