@@ -7,12 +7,6 @@ export class InmobiliariaGestion {
     private vivienda: ViviendaModel
   ) { }
 
-  calcular_costo_vivienda(): number {
-    return this.cargo_por_habitaciones()
-      .cargo_por_pisos()
-      .cargo_por_banos().total;
-  }
-
   public cargo_por_habitaciones() {
     this.total += this.vivienda.habitaciones * 500;
     return this;
